@@ -1,0 +1,19 @@
+<div class="text-center">
+<% unless flash.empty? %>
+	<% flash.each do |key, value| %>
+		<%if key.to_s=="notice"%>
+			<div class="alert alert-info">
+	      		<%= value %>
+	      	</div>
+	    <% elsif key.to_s=="alert"%>
+	      	<div class="alert alert-warning">
+	      		<%= value %>
+	      	</div>
+	    <% else %>
+		    <div class="alert alert-<%=key%>">
+		        <%= value %>
+		    </div>
+		 <% end %>
+	<% end %>
+<% end %>
+</div>

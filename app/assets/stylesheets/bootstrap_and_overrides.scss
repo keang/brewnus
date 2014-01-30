@@ -1,0 +1,79 @@
+
+hr {
+	margin-bottom: 1em;
+	height: 2px;
+	background: #d3d3d3;
+	border: none;
+	width: 100%;
+	clear: both;
+}
+
+body, html{
+	height: 100%;
+}
+
+h2{
+  padding-left: 50px;
+  margin-left:  50px;
+}
+
+.splash{ 
+  z-index: -1;
+	  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.footer {
+  /*margin-top: -50px; /* negative value of footer height */
+  height: 50px;
+  clear:both;
+  padding-top:20px;
+  margin-bottom:20px;
+}
+
+#wrap {
+  	min-height: 100%;
+  	height: auto !important;
+	height: 100%; 
+}
+
+.footer {
+  position: relative;
+  /*margin-top: -30px; /* negative value of footer height */
+  height: 30px;
+  clear:both;
+}
+
+.btn {
+	padding:10px;
+	margin-top:10px;
+}
+.control-label{
+	margin-top:15px;
+}
+.form-control{
+	margin:10px;
+  line-height: 2em;
+  font-size: 1.5em;
+}
+.file-field{
+	margin:10px;
+}
+
+#username{
+	color: #FF931E;
+} 
+
+#brand{
+	color: #3FA9F5;
+}

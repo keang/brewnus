@@ -1,8 +1,10 @@
 class BrewersController < ApplicationController
 	def create
 		@brewer = Brewer.new(params[:brewer].permit(:name, :password))
-		@brewer.save
-		redirect_to @brewer
+		if @brewer.save
+			flash[:notice] = "Yay! welcome on board!"
+			redirect_to @brewer
+		end
 	end
 	def show
 		@brewer = Brewer.find(params[:id])
