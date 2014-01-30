@@ -12,7 +12,12 @@ Nusbrew::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    resources :brewees do
+      resources :stocks
+    end
+
+    resources :brews
+    resources :places
 
   # Example resource route with options:
   #   resources :products do
