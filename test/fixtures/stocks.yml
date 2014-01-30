@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brew_id: 
+  brewer_id: 
+  place_id: 
+  quantity: 1
+
+two:
+  brew_id: 
+  brewer_id: 
+  place_id: 
+  quantity: 1
