@@ -5,4 +5,11 @@ class Brewer < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :inviter
+
+  def email_required?
+  	false
+  end
+  def email_changed?
+  	false
+  end
 end
