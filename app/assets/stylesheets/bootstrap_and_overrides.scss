@@ -12,11 +12,6 @@ body, html{
 	height: 100%;
 }
 
-h2{
-  padding-left: 50px;
-  margin-left:  50px;
-}
-
 .splash{ 
   z-index: -1;
 	  /* Set rules to fill background */
@@ -62,13 +57,11 @@ h2{
 	margin-top:15px;
 }
 .form-control{
-	margin:10px;
-  line-height: 2em;
+	margin:5px;
+  line-height: 1.5em;
   font-size: 1.5em;
 }
-.file-field{
-	margin:10px;
-}
+
 
 #username{
 	color: #FF931E;

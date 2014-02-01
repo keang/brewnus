@@ -1,6 +1,6 @@
 require "spec_helper"
 
-feature "create_stock" do
+feature "account management" do
 	scenario "creating new user" do
 		visit "/brewers/new"
 		i = FactoryGirl.build(:brewer)
@@ -9,5 +9,9 @@ feature "create_stock" do
 		fill_in "brewer_confirm_password", with: i.password
 		click_button 'Sign up'
 		expect(page).to have_content 'Yay'
+	end
+
+	scenario "sign in user" do
+		pending "sign in"
 	end
 end
