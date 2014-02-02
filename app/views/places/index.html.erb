@@ -1,1 +1,4 @@
-<p> places here </p>
+<h3> Places covered: </h3>
+<% @allPlaces.each do |p| %>
+	<p><%=p.name%></p>
+<% end %>
