@@ -16,6 +16,7 @@
       <ul class="nav navbar-nav pull-right">
         <% if brewer_signed_in? %>
               <li><p class="navbar-text" id="username">Welcome <strong><%= current_brewer.name %></strong>!</p></li>
+              <li><%= link_to "Add stock", new_brewer_stock_path(current_brewer.id), id:"add_stock"%></li>
               <li>  <%= link_to "Sign out", destroy_brewer_session_path, 
                                 id: "sign_out", :method=>:delete %></li>
             <% else %>
