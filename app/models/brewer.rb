@@ -9,6 +9,9 @@ class Brewer < ActiveRecord::Base
   	:uniqueness =>{
   		:case_sensitive => false
   	}
+  def invite_address
+  	logger.debug "nusbrew.herokuapp.com?inviter=" + name
+  end
 
   def email_required?
   	false
