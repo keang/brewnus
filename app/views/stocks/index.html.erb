@@ -1,4 +1,4 @@
-<h3> Stocks possessed: </h3>
+<h3>Your stocks: </h3>
 <% @stocks.each do |p| %>
 	<p><%=p.quantity%> <%=p.brew.name%> at <%=p.place.name%></p>
 <% end %>

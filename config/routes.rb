@@ -4,7 +4,7 @@ Nusbrew::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'places#index'
+  root 'stocks#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -12,10 +12,8 @@ Nusbrew::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-    resources :brewers do
-      resources :stocks
-    end
-
+    resources :brewers
+    resources :stocks
     resources :brews
     resources :places
 
