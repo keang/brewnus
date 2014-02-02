@@ -3,7 +3,6 @@
 	<h2 class="col-xs-offset-1 col-xs-9">Registration booth from </h2>
 </div>
 <%= form_for @mybrewer, class:"form-inline row", :url => registration_path(@mybrewer) do |f| %>
-	<%= devise_error_messages! %>
     <div class="form-group row">
 		<div class="col-sm-4 col-xs-offset-1 col-xs-9">
 		<%= f.text_field :name, class:" form-control", :placeholder=>"user id" %>
@@ -19,9 +18,11 @@
 		<%= f.password_field :password_confirmation, class:" form-control", :placeholder=>"confirm password" %>
 		</div>
 	</div>
-
-		<%= f.hidden_field :inviter_id, class:" form-control", :placeholder=>"inviter" %>
-
+	<div class="form-group row">
+		<div class="col-sm-4 col-xs-offset-1 col-xs-9">
+		<%= f.text_field :inviter_name, class:" form-control", :placeholder=>"inviter" %>
+		</div>
+	</div>
 	 <div class="row"><%= f.submit "Sign up", class:"btn btn-large btn-success col-sm-4 col-xs-offset-1 col-xs-9"%></div>
 	<%end%>
 <div class="col-sm-4 col-xs-offset-1 col-xs-9"><%= render "devise/shared/links" %></div>		
