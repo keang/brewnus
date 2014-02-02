@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 
+gem 'seed-fu', github: 'mbleigh/seed-fu'
+
 group :test, :development do
 	gem "rspec-rails", "~> 2.0"
 	gem 'capybara', "~> 2.0.2"
