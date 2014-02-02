@@ -14,6 +14,7 @@ Nusbrew::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :brewers
     resources :stocks
+    get 'mystocks' => 'stocks#own'
     resources :brews
     resources :places
 

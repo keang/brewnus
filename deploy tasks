@@ -1,0 +1,5 @@
+precompile assets
+migrate data
+seed_fu
+import places
+import brews

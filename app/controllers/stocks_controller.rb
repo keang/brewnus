@@ -36,6 +36,11 @@ class StocksController < ApplicationController
 		end
 	end
 	def index
+		@stocks = Stock.all
+	end
+	def own
 		@stocks = Stock.where(:brewer=>current_brewer)
+	end
+	def show
 	end
 end

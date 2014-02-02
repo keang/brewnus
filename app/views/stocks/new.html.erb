@@ -4,18 +4,20 @@
 </div>
 <%= form_for @stock, class:"form-inline row", :url => stocks_path do |f| %>
     <div class="form-group row">
-		<div class="col-sm-4 col-xs-offset-1 col-xs-9">
-			<%= f.label :brew_id %>
+    	<%= f.label :brew_id , class:"control-label col-xs-offset-1 col-xs-1"%>
+		<div class="col-sm-4 col-xs-4">
 			<%= f.collection_select(:brew_id, Brew.all, :id, :name, prompt:true)%>		</div>
 	</div>
 	<div class="form-group row">
-		<div class="col-sm-4 col-xs-offset-1 col-xs-9">
-			<%= f.label :place_id %>
+		<%= f.label :place_id, class:"control-label col-xs-offset-1 col-xs-1"%>
+		<div class="col-sm-4 col-xs-4">
 		<%= f.collection_select(:place_id, Place.all, :id, :name, prompt:true)%>
 		</div>
 	</div>
 	<div class="form-group row">
-		<div class="col-sm-4 col-xs-offset-1 col-xs-9">
+
+		<%= f.label :quantity, class:"control-label col-xs-offset-1 col-xs-1"%>
+		<div class="col-sm-4 col-xs-4">
 		<%= f.number_field :quantity, in:1...100, class:" form-control", :placeholder=>"how many?" %>
 		</div>
 	</div>
