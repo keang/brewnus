@@ -18,8 +18,8 @@ class RegistrationsController < Devise::RegistrationsController
 			flash[:warning] = "Pick a home base!"
 			render 'new' and return
 		end
-		@inviter.invited_count += 1
+	    super
+	    @inviter.invited_count += 1
 		@inviter.save!
-		super
 	end
 end
