@@ -6,7 +6,7 @@
     <div class="form-group row">
     	<%= f.label :brew_id , class:"control-label col-xs-offset-1 col-xs-1"%>
 		<div class="col-sm-4 col-xs-4">
-			<%= f.collection_select(:brew_id, Brew.all, :id, :name, prompt:true)%>		</div>
+		<%= f.collection_select(:brew_id, Brew.all(order:'name'), :id, :name, prompt:true)%>		</div>
 	</div>
 	<div class="form-group row">
 		<%= f.label :place_id, class:"control-label col-xs-offset-1 col-xs-1"%>
