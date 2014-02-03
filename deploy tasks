@@ -3,6 +3,7 @@
 #migrate data
 #import places: 
 	rake csv:import_places
-#import brews
+#import brews:
+	rake csv:import_alcohol_list
 #seed_fu: 
 	rake db:seed_fu
