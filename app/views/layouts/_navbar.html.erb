@@ -24,6 +24,7 @@
                 <%= link_to "Add stock", new_stock_path, id:"add_stock"%>
               </li>
               <li><%= link_to "Profile", brewer_path(current_brewer.id) %></li>
+              <li><%= link_to "Invite!", invite_path%></li>
               <li>  <%= link_to "Sign out", destroy_brewer_session_path, 
                                 id: "sign_out", :method=>:delete %></li>
             <% else %>

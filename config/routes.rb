@@ -15,6 +15,7 @@ Nusbrew::Application.routes.draw do
     resources :brewers
     resources :stocks
     get 'mystocks' => 'stocks#own'
+    get 'invite'=> 'brewers#invite'
     resources :brews
     resources :places
 

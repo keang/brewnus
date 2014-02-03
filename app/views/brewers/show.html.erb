@@ -11,11 +11,13 @@
 	<tr><td></td>
 		<td><ul>
 			<% @invited.each do |i|%>
-				<li><%=i.name%></li>
+				<li><%=link_to i.name, brewer_path(i.id)%></li>
 			<%end%>
 			</ul>
 		</td>
 	</tr>
+	<tr><td><%=link_to "Invite more friends!", invite_path, class:"btn btn-default"%></td>
+		<tr><td><br></td></tr>
 	<tr>
 		<td>Stash added:</td>
 	</tr>
@@ -29,6 +31,3 @@
 		</td>
 	</tr>
 </table>
-<h2>How to invite</h2>
-<p>Send this link to your drinking buddies in NUS!</p>
-<p><code><%= @brewer.invite_address%></code></p>

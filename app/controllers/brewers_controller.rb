@@ -18,4 +18,7 @@ class BrewersController < ApplicationController
 		@stocks = Stock.where(brewer:@brewer)
 		logger.error current_brewer.invite_address
 	end
+
+	def invite
+	end
 end
