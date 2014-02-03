@@ -1,5 +1,8 @@
-precompile assets
-migrate data
-seed_fu
-import places
-import brews
+#precompile assets 
+	RAILS_ENV=production bundle exec rake assets:precompile
+#migrate data
+#import places: 
+	rake csv:import_places
+#import brews
+#seed_fu: 
+	rake db:seed_fu

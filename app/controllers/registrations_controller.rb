@@ -5,17 +5,14 @@ class RegistrationsController < Devise::RegistrationsController
 		super
 	end
 	def create
-		@mybrewer = Brewer.new(params[:brewer].permit(:name, :password, :password_confirmation, :inviter_name))
+		@mybrewer = Brewer.new(params[:brewer].permit(:name, :password, 
+									:password_confirmation, :inviter_name, :home_base_id))
 		@inviter = Brewer.find_by_name(params[:brewer][:inviter_name])
 		if @inviter.nil?
 			flash[:warning] = "Invalid inviter"
 			render 'new' and return
 			#redirect_to bad_invite_path
 		end
-		logger.error "inviter is "
-		logger.error @mybrewer.inspect
-		logger.debug params[:inviter_name]
-		logger.error flash[:inviter]
 		super
 	end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140202180343) do
+ActiveRecord::Schema.define(version: 20140203125613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,9 +43,11 @@ ActiveRecord::Schema.define(version: 20140202180343) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "inviter_name"
+    t.integer  "home_base_id"
   end
 
   add_index "brewers", ["email"], name: "index_brewers_on_email", using: :btree
+  add_index "brewers", ["home_base_id"], name: "index_brewers_on_home_base_id", using: :btree
   add_index "brewers", ["inviter_id"], name: "index_brewers_on_inviter_id", using: :btree
   add_index "brewers", ["reset_password_token"], name: "index_brewers_on_reset_password_token", unique: true, using: :btree
 
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 20140202180343) do
     t.float    "liters"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "liquor_type"
   end
 
   create_table "places", force: true do |t|
