@@ -1,13 +1,13 @@
    
 <nav class="navbar navbar-fixed-bottom navbar-default">
  <div class="containter">
+
   <% if brewer_signed_in? %>
      <div class="col-xs-4">
      
        <small>Send this to friends: <code><%= @current_brewer.invite_address%></code></small>   
      </div><!--/ column-->
      <%end%>
-
      
      <div class="col-xs-4" style="text-align:center;">      
        
