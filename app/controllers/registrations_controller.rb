@@ -13,6 +13,8 @@ class RegistrationsController < Devise::RegistrationsController
 			render 'new' and return
 			#redirect_to bad_invite_path
 		end
+		@inviter.invited_count += 1
+		@inviter.save!
 		super
 	end
 end

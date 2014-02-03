@@ -11,7 +11,7 @@ class Brewer < ActiveRecord::Base
   		:case_sensitive => false
   	}
   def invite_address
-  	logger.debug "nusbrew.herokuapp.com?inviter=" + name
+  	"nusbrew.herokuapp.com/brewers/sign_up?inviter=" + name
   end
 
   def email_required?

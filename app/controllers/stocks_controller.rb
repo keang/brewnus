@@ -1,6 +1,10 @@
 class StocksController < ApplicationController
 	def new
 		@stock = Stock.new
+		unless brewer_signed_in?
+			render new_brewer_session_path and return
+		end
+		@stock.place = Place.find(current_brewer.home_base_id)
 	end
 	def create
 		@stock = Stock.new
@@ -23,13 +27,14 @@ class StocksController < ApplicationController
 		end
 		@stock = Stock.find_or_initialize_by(brewer:current_brewer,
 											brew:brew,
+											liquor_type:brew.liquor_type,
 											place:place)
 		quantity = Integer(params[:stock][:quantity]) rescue 0
 		@stock.quantity += quantity
 
 		if @stock.save
-			flash[:success] = 'Stock updated!'
-			redirect_to stocks_path
+			flash[:success] = 'Stocks updated!'
+			redirect_to mystocks_path
 		else
 			flash[:warning] = @stock.errors.full_messages.to_sentence
 			render 'new'

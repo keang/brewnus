@@ -9,9 +9,11 @@ hr {
 }
 
 body, html{
-	height: 100%;
 }
 
+body {
+  padding-bottom: 150px;
+}
 select{
   margin-top: 15px;
   margin-bottom: 5px;
@@ -33,13 +35,19 @@ select{
 }
 
 .footer {
-  /*margin-top: -50px; /* negative value of footer height */
+  position:relative;
+  margin-top: -50px; /* negative value of footer height */
   height: 50px;
   clear:both;
   padding-top:20px;
   margin-bottom:20px;
 }
-
+small{
+  color: #909090;
+  position:fixed;
+  padding-top: 15px;
+  height:40px;
+}
 #wrap {
   	min-height: 100%;
   	height: auto !important;
@@ -64,6 +72,8 @@ select{
 	margin:5px;
   line-height: 1.5em;
   font-size: 1.5em;
+  padding-top:0px;
+  padding-bottom:0px;
 }
 
 

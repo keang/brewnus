@@ -14,5 +14,7 @@ class BrewersController < ApplicationController
 
 	def show
 		@brewer = Brewer.find(params[:id])
+		@invited = Brewer.where(inviter_name:@brewer.name)
+		@stocks = Stock.where(brewer:@brewer)
 	end
 end
