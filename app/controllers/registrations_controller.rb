@@ -13,6 +13,11 @@ class RegistrationsController < Devise::RegistrationsController
 			render 'new' and return
 			#redirect_to bad_invite_path
 		end
+		if params[:brewer][:home_base_id].nil? ||
+				params[:brewer][:home_base_id]==""
+			flash[:warning] = "Pick a home base!"
+			render 'new' and return
+		end
 		@inviter.invited_count += 1
 		@inviter.save!
 		super

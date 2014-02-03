@@ -5,7 +5,6 @@ class Brewer < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :inviter
-  has_one :home_base
   validates :name,
   	:uniqueness =>{
   		:case_sensitive => false
