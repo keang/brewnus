@@ -11,7 +11,7 @@
 	<tr><td></td>
 		<td><ul>
 			<% @invited.each do |i|%>
-				<li><%=link_to i.name, brewer_path(i.id)%></li>
+				<li><%=link_to i.name, brewer_path(i.id)%><sup><%=i.invited_count%></sup></li>
 			<%end%>
 			</ul>
 		</td>
