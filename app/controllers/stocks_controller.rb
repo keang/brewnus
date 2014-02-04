@@ -35,6 +35,7 @@ class StocksController < ApplicationController
 
 		if @stock.save
 			flash[:success] = 'Stocks updated!'
+			logger.info "newStock: " + @stock.inspect
 			redirect_to mystocks_path
 		else
 			flash[:warning] = @stock.errors.full_messages.to_sentence

@@ -26,6 +26,6 @@ class RegistrationsController < Devise::RegistrationsController
 	    super
 	    @inviter.invited_count += 1
 		@inviter.save!
-
+		logger.info "newBrewer: " + @mybrewer.inspect
 	end
 end
