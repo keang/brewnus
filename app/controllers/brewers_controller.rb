@@ -1,4 +1,5 @@
 class BrewersController < ApplicationController
+	caches_action :show, layout:false
 	def create
 		@brewer = Brewer.new(params[:brewer].permit(:name, :password, :confirm_password))
 		if(@brewer.password == params[:brewer][:confirm_password])
@@ -16,7 +17,7 @@ class BrewersController < ApplicationController
 		@brewer = Brewer.find(params[:id])
 		@invited = Brewer.where(inviter_name:@brewer.name)
 		@stocks = Stock.where(brewer:@brewer)
-		logger.error current_brewer.invite_address
+		#logger.error current_brewer.invite_address
 	end
 
 	def invite

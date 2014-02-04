@@ -1,8 +1,6 @@
 class PlacesController < ApplicationController
+	caches_page :index
 	def index
-		if brewer_signed_in?
-			logger.error current_brewer.inspect
-		end
 		@liquor_type = Brew.uniq.pluck('liquor_type')
 		@liquor_type.sort!
 		@places = Place.all(order:'name')
@@ -10,7 +8,7 @@ class PlacesController < ApplicationController
 		@bar = LazyHighCharts::HighChart.new('column') do |f|
 			@liquor_type.each do |l|
 				data = []
-				logger.error l.inspect
+				#logger.error l.inspect
 				@places.each do |p|
 					data.push(Stock.where(place:p).where(liquor_type:l).count)
 				end

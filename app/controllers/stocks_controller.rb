@@ -1,4 +1,5 @@
 class StocksController < ApplicationController
+	caches_action :new, :create, :index, :own, :show
 	def new
 		@stock = Stock.new
 		unless brewer_signed_in?

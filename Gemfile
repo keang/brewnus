@@ -39,6 +39,10 @@ gem 'devise'
 
 gem 'seed-fu', github: 'mbleigh/seed-fu'
 
+gem 'memcachier'
+gem 'dalli'
+gem "actionpack-action_caching"
+gem 'actionpack-page_caching'
 group :test, :development do
 	gem "rspec-rails", "~> 2.0"
 	gem 'capybara', "~> 2.0.2"
