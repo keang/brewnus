@@ -1,5 +1,4 @@
 class RegistrationsController < Devise::RegistrationsController
-	caches_action :new, :create
 	def new
 		@mybrewer = Brewer.new
 		@mybrewer.inviter_name = params[:inviter]
