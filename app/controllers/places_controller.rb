@@ -1,5 +1,4 @@
-class PlacesController < ApplicationController
-	caches_action :index, layout:false
+class PlacesController < ApplicationControllers
 	def index
 		@liquor_type = Brew.uniq.pluck('liquor_type')
 		@liquor_type.sort!
