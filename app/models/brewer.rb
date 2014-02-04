@@ -7,7 +7,7 @@ class Brewer < ActiveRecord::Base
   belongs_to :inviter
   validates :name,
   	:uniqueness =>{
-  		:case_sensitive => false
+  		:message=> "Try a different name."
   	}
   def invite_address
   	"nusbrew.herokuapp.com/brewers/sign_up?inviter=" + name

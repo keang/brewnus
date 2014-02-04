@@ -5,8 +5,13 @@ class RegistrationsController < Devise::RegistrationsController
 		super
 	end
 	def create
+		nameCheck = Brewer.find_by_name(params[:brewer][:name])
 		@mybrewer = Brewer.new(params[:brewer].permit(:name, :password, 
 									:password_confirmation, :inviter_name, :home_base_id))
+		unless nameCheck.nil?
+			flash[:warning] = "\""+nameCheck.name+"\""+ " already taken. Pick another name."
+			render 'new' and return
+		end
 		@inviter = Brewer.find_by_name(params[:brewer][:inviter_name])
 		if @inviter.nil?
 			flash[:warning] = "Invalid inviter"
@@ -21,5 +26,6 @@ class RegistrationsController < Devise::RegistrationsController
 	    super
 	    @inviter.invited_count += 1
 		@inviter.save!
+
 	end
 end
