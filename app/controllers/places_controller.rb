@@ -9,13 +9,18 @@ class PlacesController < ApplicationController
 				data = []
 				#logger.error l.inspect
 				@places.each do |p|
-					data.push(Stock.where(place:p).where(liquor_type:l).count)
+					@typesInP = Stock.where(place:p).where(liquor_type:l)
+					sum = 0
+					@typesInP.each do |t|
+						sum += t.brew.liters * t.quantity
+					end
+					data.push(sum)
 				end
 				f.series(:name=>l,:data=> data)
 			end    
 	      f.title({ :text=>"Stash across NUS"})
 	      f.xAxis({categories:@placesNames.sort!})
-	      f.yAxis({title:{text:"Count"}})
+	      f.yAxis({title:{text:"Liters"}})
 	      f.legend({:align => 'right', 
                     :x => -100, 
                     :verticalAlign=>'top',
