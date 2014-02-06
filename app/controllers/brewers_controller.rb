@@ -1,5 +1,4 @@
 class BrewersController < ApplicationController
-	caches_action :show, layout:false
 	def create
 		@brewer = Brewer.new(params[:brewer].permit(:name, :password, :confirm_password))
 		if(@brewer.password == params[:brewer][:confirm_password])
